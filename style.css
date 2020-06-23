@@ -1,0 +1,274 @@
+@charset "utf-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    list-style:none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* reset-end */
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;700&family=Noto+Serif+KR:wght@200;400;600&display=swap');
+
+body {
+    font-family: 'Noto Serif KR', serif;
+}
+
+a {
+    text-decoration:none;
+    color:#ffbeb2;
+}
+
+.background {
+    position:fixed;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    color:#fff;
+    background:linear-gradient(#332b50 0%,#844e68 100%);
+    /* background:linear-gradient(#151521 0%,#577992 100%); */
+}
+
+
+.none {
+    display:none;
+}
+
+header.none {
+    display:none;
+}
+
+.main {
+    /* background:#ffbeb2; */
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:-2%;
+    cursor:pointer;
+}
+.main.none {
+    display:none;
+}
+.main-box {
+    width:800px;
+    height:800px;
+    position:relative;
+}
+.line {
+    background:#ffbeb2;
+    display:block;
+    position: absolute;
+    
+}
+    .line.hl1 {
+        width:20px;
+        height:0%;
+        bottom:0; right:0;
+        /* background:linear-gradient(#f9df88 0%, #936f61 100%); */
+    }
+    .line.hl2 {
+        width:20px;
+        height: 0%;
+        top:30%; right:70%;
+        /* background:linear-gradient(#f9df88 0%, #936f61 100%); */
+    }
+    .line.wl1 {
+        width: 0%;
+        height:20px;
+        bottom:0; left:30%;
+        /* background:#936f61; */
+    }
+    .line.wl2 {
+        width: 0%;
+        height:20px;
+        bottom:67.5%; right:0;
+        /* background:#f9df88; */
+    }
+        .on {
+            transition:all 0.5s;
+        }
+        .line.hl2.on {
+            width:20px;
+            height:70%;
+            bottom:0; right:70%;
+            background:linear-gradient(#f9df88 0%, #936f61 100%);
+        }
+    .main .fa-moon {
+        transition:all 1s;
+        position: absolute;
+        top:0%;
+        left:0;
+        color:#ffbeb2;
+        font-size:420px;
+        opacity:0;
+    }
+    
+
+header {
+    /* background:#444; */
+    position:fixed;
+    /* left:-15%; */
+    left:0;
+    width:15%;
+    height:100%;
+    transition:all .5s;
+    font-family: 'Josefin Slab', serif;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+    header:hover {
+        border-right:1px solid rgba(255,255,255,0.2);
+        /* background:rgba(39, 27, 27, 0.3); */
+        background:rgba(255,255,255,0.1);
+    }
+    
+header h1 {
+    /* background:#555; */
+    text-align:center;
+    font-size:50px;
+    font-weight:700;
+    margin-top:15%;
+}
+    header h1 a:hover {
+        transition:all 0.5s;
+        color:#fff;
+    }
+header ul {
+    display:flex;
+    width:80%;
+    margin:0 auto;
+}
+header ul.gnb {
+    /* background:#666; */
+    justify-content:space-between;
+    flex-direction:column;
+    height:50vh;
+}
+header li {
+    font-weight:700;
+    font-size:20px;
+    text-align:right;
+}
+    header li a:hover:before {
+        content:'';
+        display:inline-block;
+        background:#fff;
+        width:5px; height:5px;
+    }
+    header li a:hover {
+        transition:all 0.5s;
+        color:#fff;
+    }
+
+header ul.sns-btn  {
+    padding-bottom:10%;
+    /* justify-content: flex-end; */
+}
+header ul.sns-btn li a  {
+    font-size:25px;
+    margin-left:5px;
+}
+
+/* main content */
+.content {
+    width:85%; height:100%;
+    /* background:rgba(255,255,255,0.1); */
+    position:fixed;
+    right:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.content article {
+    background:rgba(255,255,255,0.1);
+    width: 95%; height:100%;
+    border-radius:20px 20px 0 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border:1px solid rgba(255,255,255,0.1);
+    margin-top:5%;
+    /* opacity:0; */
+    /* margin-top:25%; */
+    transition:all 1s;
+}
+.content article .title {
+    display:block;
+    font-size:40px;
+    text-align:left;
+    border-bottom:1px solid rgba(255,255,255,0.3);
+    padding-top:10px;
+    width:95%;
+    height:60px;
+    font-weight:200;
+    line-height:60px;
+}
+.content article .art-con {
+    /* background:#777; */
+    width:95%;
+    height:100%;
+    margin-top:10px;
+    overflow-y:auto;
+}
+    .content article .art-con::-webkit-scrollbar {
+        width:5px;
+        background:rgba(99,65,92,0.8);
+        border-radius:5px;
+    }
+    .content article .art-con::-webkit-scrollbar-thumb {
+        width:4px; 
+        border-radius:5px;
+        background:rgba(255,255,255,0.3);
+    }
+
+.content img {
+    width:100%;
+    margin:20px 0 20px 0;
+}
